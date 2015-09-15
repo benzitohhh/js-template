@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test":  "echo \"Error: no test specified\" && exit 1",
-    "dev": "watchify src/index.js -o public/build/index.js --debug --verbose",
+    "dev": "http-server --silent & watchify src/index.js -o public/build/index.js --debug --verbose",
     "build": "browserify src/index.js -o public/build/index.js --debug --verbose",
     "start": "npm run dev"
   },
@@ -19,6 +19,7 @@
   "devDependencies": {
     "babelify": "^6.1.3",
     "browserify": "^11.0.0",
-    "watchify": "^3.3.0"
+    "watchify": "^3.3.0",
+    "http-server": "^0.8.0"
   }
 }
