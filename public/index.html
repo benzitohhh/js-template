@@ -30,12 +30,27 @@
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 text-center">
+          <h4>Subheading</h4>
+          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+        </div>
+      </div>
+
+      <div id="container"></div>
     </div>
     <div class="container">
       <footer class="footer">
         <p>© Company 2014</p>
       </footer>
     </div>
+
+    <!-- Hicharts does not play nicely with browserify, so load it from files here -->
+    <script src="vendor/jquery-1.11.2.min.js"></script>
+    <script src="vendor/highcharts.js"></script>
+    <!-- / end of hicharts imports -->
+
     <script src="build/main.js"></script>
   </body>
 </html>
