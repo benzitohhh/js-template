@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build-js": "browserify src/main.js -o public/build/main.js --debug --verbose",
+    "watch-js": "watchify src/main.js -o public/build/main.js --debug --verbose",
+    "build-css": "cp node_modules/nvd3/build/nv.d3.css public/build/nv.d3.css; cp -r node_modules/bootstrap/dist/ public/build/bootstrap",
+    "build": "npm run build-css & npm run build-js",
     "test":  "echo \"Error: no test specified\" && exit 1",
-    "dev": "http-server --silent & watchify src/index.js -o public/build/index.js --debug --verbose",
-    "build": "browserify src/index.js -o public/build/index.js --debug --verbose",
+    "dev": "http-server --silent & npm run build-css & npm run watch-js",
     "start": "npm run dev"
   },
   "browserify": {
@@ -14,7 +17,11 @@
     ]
   },
   "dependencies": {
-    "react": "^0.13.3"
+    "bootstrap": "^3.3.5",
+    "d3": "^3.5.6",
+    "nvd3": "^1.8.1",
+    "react": "^0.13.3",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "babelify": "^6.1.3",

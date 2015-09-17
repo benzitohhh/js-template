@@ -1,0 +1,37 @@
+body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #313435;
+}
+
+.main-container {
+    max-width: 800px;
+    min-height: 700px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header {
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+
+.footer {
+    padding-top: 9px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    margin-top: 90px;
+}
+
+.jumbotron {
+    margin-top: 40px;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
