@@ -11,7 +11,8 @@
 // });
 // React.render(<Hello />, document.getElementById('container'));
 
-// ============Read in CSV=====================
+
+// ============Read in CSV from file===========
 // var d3 = require('d3');
 // var FILE = "data/myData.csv";
 // d3.csv(FILE, function(d) {
@@ -20,6 +21,17 @@
 // }, function(error, input_rows) {
 //   // do stuff
 // });
+
+
+// ============Read in CSV from inline string==
+// var d3 = require('d3');
+// var CSV_STRING = '\
+// Accession Number,Target Name,"""Cluster""",priority_date,granted_date,expiry_date,inactive_date\n\
+// 2013D75068,Ahold Coffee Company Bv,Capsule,2011-09-14,,2031-09-14,2018-03-20\n\
+// 2011Q79421,Biserkon Holdings Ltd,Capsule,2010-06-18,,2030-06-18,2019-07-27\n\
+// ';
+// var input_rows = d3.csv.parse(CSV_STRING);
+
 
 // ===========Add an nvd3 chart=================
 // var nv = require('nvd3');
@@ -46,6 +58,7 @@
 // var chart = nv.models.multiBarChart();
 // var data = [{ key: 'someKey', values: [{x: 1, y: 23}, {x: 2, y: 555}]}];
 // nv_render(chart, '#container', data);
+
 
 // ===========Add a hicharts chart=============
 // Note: this uses files from the "/vendor" folder (as hicharts does not support browserify)
