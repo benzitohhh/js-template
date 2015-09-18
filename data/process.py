@@ -16,9 +16,9 @@ Options:
   -d --inputdelimiter=<delimiter>   The input delimiter (i.e. "," or "t" for tab) [default: ,]
 
 Examples:
-  ./process -f coffeePatents.csv -s 2
-  ./process -f coffeePatents.tsv -s 2 -d t
-  ./process -f evilCsvWithLineBreaks.csv -s 1
+  ./process -f input/coffeePatents.csv -s 2
+  ./process -f input/coffeePatents.tsv -s 2 -d t
+  ./process -f input/evilCsvWithLineBreaks.csv -s 1
 """
 
 from docopt import docopt
@@ -28,10 +28,10 @@ import MySQLdb
 import MySQLdb.cursors
 
 DB_CONFIG = {
-    'host'        : 'mikedb.prod.aistemos.com',
+    'host'        : 'sulley.local',
     'port'        : 3306,
     'user'        : 'dev',
-    'passwd'      : 'WhhvQzCB0',
+    'passwd'      : '',
     'db'          : 'PatentFamilies',
     'charset'     : 'utf8',
     'cursorclass' : MySQLdb.cursors.SSCursor
@@ -65,12 +65,12 @@ def main():
     # read in csv
     with open(params['--file'], 'rU') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=inputdelimiter) # gets field_names from first line of CSV
-        fieldnames = reader.fieldnames
-        fieldnames = fieldnames + DB_FIELDNAMES
-        accessioncol_name = fieldnames[accessioncolnum]
-        writer = csv.DictWriter(sys.stdout, fieldnames, dialect='excel')
+        input_fieldnames = reader.fieldnames
+        output_fieldnames = input_fieldnames + DB_FIELDNAMES
+        accessioncol_name = input_fieldnames[accessioncolnum]
+        writer = csv.DictWriter(sys.stdout, output_fieldnames, dialect='excel')
 
-        # output header
+        # output csv header
         writer.writeheader()
 
         for row in reader:
@@ -81,7 +81,7 @@ def main():
             db_fields = get_db_row(accession, cur)
             row.update(db_fields)
 
-            # Output the line
+            # Output csv line
             writer.writerow(row)
 
     # Close db
