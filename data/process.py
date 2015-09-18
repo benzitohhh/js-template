@@ -24,9 +24,10 @@ import sys
 import MySQLdb
 import MySQLdb.cursors
 
-import dbconfig # file that contains db config (or add it explicitly below)
+# DB_CONFIG
+# Either use file 'dbconfig.py', or specify it explitly below.
+import dbconfig
 DB_CONFIG = dbconfig.LOCAL_CONFIG
-
 # DB_CONFIG = {
 #     'host'        : 'localhost',
 #     'user'        : 'root',
