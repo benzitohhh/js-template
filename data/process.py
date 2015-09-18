@@ -55,6 +55,7 @@ def get_cursor(conn):
     return conn.cursor(MySQLdb.cursors.SSDictCursor)
 
 def main():
+    # Get commandline params
     params = docopt(__doc__)
     colnum = int(params['--colnum'])
     inputdelimiter = params['--inputdelimiter']
