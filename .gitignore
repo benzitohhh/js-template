@@ -2,8 +2,15 @@
 .localized
 .tern-port
 .tern-project
+npm-debug.log
+*.pyc
+
+# Exclude the nodemodules (but save a symlink to src)
 node_modules/*
 !node_modules/src
-npm-debug.log
+
+# Exclude the build stuff
 public/build/*
-*.pyc
+
+# Exclude db config
+dbconfig.py

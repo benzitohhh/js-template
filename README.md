@@ -1,13 +1,20 @@
 # Add title here
 
 
-## To install
+## To install js
 ```
 npm install
 ```
 
 
-## To develop
+## To install the python requirements
+```
+cd data
+pip install -r requirements.txt
+```
+
+
+## To develop js
 ```
 npm start
 ```
