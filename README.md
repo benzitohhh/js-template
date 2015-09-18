@@ -12,6 +12,7 @@ npm install
 cd data
 pip install -r requirements.txt
 ```
+If you're using a database, `cp dbconfig.template.py dbconfig.py` and your credentials.
 
 
 ## To develop js
