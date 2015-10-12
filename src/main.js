@@ -1,5 +1,6 @@
 // ============REACT==========================
 // var React = require('react');
+// var ReactDOM = require('react-dom');
 // var Hello = React.createClass({
 //   render: function() {
 //     return (
@@ -9,7 +10,7 @@
 //     );
 //   }
 // });
-// React.render(<Hello />, document.getElementById('container'));
+// ReactDOM.render(<Hello />, document.getElementById('container'));
 
 
 // ============Read in CSV from file===========
